@@ -400,7 +400,7 @@
     /* 课程 */
     .class{
         height: 1.94rem;
-        /*padding: 0 0.15rem;*/
+        padding: 0 0.15rem 0 0;
         /*background-color: pink;*/
         .box1{
             width: 2600px;
@@ -476,7 +476,7 @@
 
     /* 现场课 */
     .site-class-container{
-        width: 1000px;
+        width: 100%;
         .title{
             height: .45rem;
             line-height: .45rem;
