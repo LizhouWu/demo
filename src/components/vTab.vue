@@ -1,28 +1,12 @@
 <template>
     <div>
         <!--<divider>定义bar固定宽度</divider>-->
-        <tab :line-width="1" custom-bar-width="60px">
-            <tab-item selected>已发货</tab-item>
-            <tab-item>未发货</tab-item>
-            <tab-item>全部订单</tab-item>
-            <tab-item>更多</tab-item>
+        <tab :line-width="2" custom-bar-width="90px">
+            <tab-item selected>奇迹30</tab-item>
+            <tab-item>精品课</tab-item>
+            <tab-item>精粹集锦</tab-item>
+            <tab-item class="more">更多</tab-item>
         </tab>
-        <!--<swiper v-model="index" height="100px" :show-dots="false">
-            <swiper-item v-for="(item, index) in list2" :key="index">
-                <div class="tab-swiper vux-center">{{item}} Container</div>
-            </swiper-item>
-        </swiper>-->
-
-        <!--<div>
-            <tab :line-width=2 active-color='#fc378c' v-model="index">
-                <tab-item class="vux-center" :selected="demo2 === item" v-for="(item, index) in list2" @click="demo2 = item" :key="index">{{item}}</tab-item>
-            </tab>
-            <swiper v-model="index" height="100px" :show-dots="false">
-                <swiper-item v-for="(item, index) in list2" :key="index">
-                    <div class="tab-swiper vux-center">{{item}} Container</div>
-                </swiper-item>
-            </swiper>
-        </div>-->
     </div>
 </template>
 
@@ -145,5 +129,23 @@
     .box2-wrap {
         height: 300px;
         overflow: hidden;
+    }
+
+    .vux-tab .vux-tab-item{
+        font-size: 18px;
+        font-weight: 600;
+        margin-left: .05rem;
+    }
+    .vux-tab .vux-tab-item.vux-tab-selected{
+
+    }
+    .vux-tab-item.more{
+        font-size: 14px;
+        color: #888888 !important;
+        width: .2rem;
+        text-align: right;
+        /*padding-right: .15rem;*/
+        /*margin-right: .15rem;*/
+        font-weight: normal;
     }
 </style>

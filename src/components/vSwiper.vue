@@ -4,7 +4,8 @@
                 style="width:100%;margin:0 auto;"
                 :height= "swiperHeight"
                 dots-class="custom-bottom"
-                dots-position="center">
+                dots-position="center"
+                :show-desc-mask=false>
         </swiper>
     </div>
 </template>
