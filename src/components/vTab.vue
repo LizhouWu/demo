@@ -1,11 +1,19 @@
 <template>
     <div>
         <!--<divider>定义bar固定宽度</divider>-->
+<<<<<<< HEAD
         <tab :line-width="2" custom-bar-width="90px">
             <tab-item selected>奇迹30</tab-item>
             <tab-item>精品课</tab-item>
             <tab-item>精粹集锦</tab-item>
             <tab-item class="more">更多</tab-item>
+=======
+        <tab :line-width="2" custom-bar-width="60px">
+            <tab-item selected>奇迹30</tab-item>
+            <tab-item>精品课</tab-item>
+            <tab-item>精粹集锦</tab-item>
+            <tab-item>更多</tab-item>
+>>>>>>> 3bea29e56f3d9a16e105fa74b3f45a5eaa2505fa
         </tab>
     </div>
 </template>
@@ -130,6 +138,7 @@
         height: 300px;
         overflow: hidden;
     }
+<<<<<<< HEAD
 
     .vux-tab .vux-tab-item{
         font-size: 18px;
@@ -148,4 +157,6 @@
         /*margin-right: .15rem;*/
         font-weight: normal;
     }
+=======
+>>>>>>> 3bea29e56f3d9a16e105fa74b3f45a5eaa2505fa
 </style>

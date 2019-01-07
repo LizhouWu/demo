@@ -28,8 +28,11 @@
         font-size: 12px;
         /*font-family: PingFangSC-Medium;*/
         font-family: PingFangSC-Medium;
+<<<<<<< HEAD
         max-width: 750px;
         margin:0 auto;
+=======
+>>>>>>> 3bea29e56f3d9a16e105fa74b3f45a5eaa2505fa
     }
     #app{
         margin-bottom: 90px;

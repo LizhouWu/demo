@@ -627,7 +627,7 @@
             border-color: #EF4D1B;
         }
     }
-    
+
     /* 推广课程 */
     .share-container{
         width: 100%;
