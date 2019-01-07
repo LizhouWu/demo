@@ -1,10 +1,10 @@
 <template>
     <div>
         <!--<divider>定义bar固定宽度</divider>-->
-        <tab :line-width="1" custom-bar-width="60px">
-            <tab-item selected>已发货</tab-item>
-            <tab-item>未发货</tab-item>
-            <tab-item>全部订单</tab-item>
+        <tab :line-width="2" custom-bar-width="60px">
+            <tab-item selected>奇迹30</tab-item>
+            <tab-item>精品课</tab-item>
+            <tab-item>精粹集锦</tab-item>
             <tab-item>更多</tab-item>
         </tab>
         <!--<swiper v-model="index" height="100px" :show-dots="false">

@@ -1,7 +1,20 @@
 <template>
     <div class="home-container">
         <!-- 搜索 -->
-        <vSearch></vSearch>
+        <div class="search-container">
+            <div class="server">
+                <img src="../assets/images/icon-server.png" alt="">
+                客服
+            </div>
+            <div class="search">
+                <input type="search" name="search" placeholder="搜索课程或导师">
+            </div>
+            <div class="other">
+                <img class="class" src="../assets/images/icon-class.png" alt="">
+                <img class="message" src="../assets/images/icon-message.png" alt="">
+            </div>
+        </div>
+
         <!-- 轮播图 -->
         <div class="slide">
             <vSwiper :lunbotuList="lunbotuList"
@@ -20,7 +33,8 @@
                             <img src="../assets/images/img.png" alt="">
                         </a>
                         <div class="inf">
-                            <span class="title">标题这是一个标题，一个标题标题这是一个标题，一个标题</span>
+                            <span class="title">灵商密码 成都场灵商
+密码 成都场</span>
                             <span class="desc">最值得学习的商业课程</span>
                             <span class="price">￥360.00</span>
                         </div>
@@ -28,25 +42,10 @@
                 </div>
             </scroller>
         </div>
-       <!-- <h2>新生必读</h2>
-        <vScroller></vScroller>-->
 
         <!-- 课程 -->
-        <vTab></vTab>
-        <vScroller></vScroller>
-
-        <!-- 现场课 -->
-        <div class="title">
-            <h2>现场课</h2>
-            <span>更多</span>
-        </div>
-        <CardClass ></CardClass>
-
-        <div class="newStudent">
-            <div class="title">
-                <h2>导师团队</h2>
-                <span>更多</span>
-            </div>
+        <div class="class">
+            <vTab></vTab>
             <scroller lock-y :scrollbar-x=false>
                 <div class="box1">
                     <div class="box1-item" v-for="i in 7">
@@ -55,7 +54,8 @@
                             <img src="../assets/images/img.png" alt="">
                         </a>
                         <div class="inf">
-                            <span class="title">标题这是一个标题，一个标题标题这是一个标题，一个标题</span>
+                            <span class="title">灵商密码 成都场灵商
+密码 成都场</span>
                             <span class="desc">最值得学习的商业课程</span>
                             <span class="price">￥360.00</span>
                         </div>
@@ -64,19 +64,69 @@
             </scroller>
         </div>
 
-        <!-- 周边产品 -->
-        <div class="title">
-            <h2>周边产品</h2>
-            <span>更多</span>
+
+        <!-- 现场课 -->
+        <div class="site-class-container">
+            <div class="title">
+                <h2>现场课</h2>
+                <span>更多</span>
+            </div>
+            <scroller lock-y :scrollbar-x=false>
+                <div class="box1">
+                    <div class="box1-item" v-for="i in 7">
+                        <!--<span>{{' ' + i + ' '}}</span>-->
+                        <a href="" class="img">
+                            <img src="../assets/images/1.png" alt="">
+                        </a>
+                        <div class="site-inf">
+                            <span class="site-title">奇迹30 前端请注意排序 01</span>
+                            <div class="inf">
+                                <span class="price">￥360.00</span>
+                                <span class="time">2019-02-23</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </scroller>
         </div>
-        <CardClass></CardClass>
+
+        <!-- 导师团队 -->
+        <div class="mentor-container">
+            <div class="title">
+                <h2>导师团队</h2>
+                <span>更多</span>
+            </div>
+            <scroller lock-y :scrollbar-x=false>
+                <div class="box1">
+                    <div class="box1-item" v-for="i in 7">
+                        <!--<span>{{' ' + i + ' '}}</span>-->
+                        <div class="mentor-photo">
+                            <a href="#">
+                                <img src="../assets/images/photo.jpg" alt="">
+                            </a>
+                            <div class="mentor-name">凤凰娴</div>
+                        </div>
+                        <div class="mentor-inf">奇迹30创始人，国内知名
+                            导师奇迹30创始人奇迹30创始人，国内知名…</div>
+                    </div>
+                </div>
+            </scroller>
+        </div>
+
+        <!-- 周边产品 -->
+        <div class="cartoon-container">
+            <div class="title">
+                <h2>周边产品</h2>
+                <span>进入商城</span>
+            </div>
+            <CardClass></CardClass>
+        </div>
+
 
     </div>
 </template>
 
 <script>
-
-
     import vSwiper from "../components/vSwiper.vue"
     import CardClass from "../components/CardClass.vue"
     import vTab from "../components/vTab.vue"
@@ -94,6 +144,10 @@
             vTab,
             vScroller,
             vSearch
+        },
+        created(){
+            this.$store.state.showTabbar = true
+            console.log(this.$store.state.showTabbar)
         },
         data() {
             return {
@@ -114,9 +168,10 @@
                         // title: '送你一辆车'
                     }
                 ],
-                swiperHeight: "190px",
+                swiperHeight: "1.65rem",
                 results: [],        // 顶部工具条数据
                 value: 'test',
+                "msg": "nihao",
 
                 index01: 0,
                 list2: list(),
@@ -177,50 +232,108 @@
 <style scoped lang="less">
     @import '~vux/src/styles/1px.less';
     @import '~vux/src/styles/center.less';
-    /* 轮播图 */
-    .slide{
-        /*margin-bottom: .2rem;*/
+
+    /* 搜索栏 */
+    .search-container{
+        display: flex;
+        flex-direction: row;
+        padding: 0 .15rem;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        .server{
+            width: .7rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 14px;
+            color: #EF4D1B;
+            img{
+                width: .25rem;
+                height: .18rem;
+                padding-right: .05rem;
+            }
+        }
+        .search{
+            width: 2rem;
+            margin: 0 .15rem 0 .1rem;
+            input{
+                width: 2.03rem;
+                height: .3rem;
+                background: #EEEEEE;
+                border-radius: 30px;
+                padding: 0 .1rem;
+                font-size: 14px;
+                color: #888888;
+            }
+        }
+        .other{
+            width: .6rem;
+            display: flex;
+            justify-content: space-between;
+            .class{
+                display: inline-block;
+                width: .2rem;
+                height: .2rem;
+            }
+            .message{
+                display: inline-block;
+                width: .24rem;
+                height: .21rem;
+            }
+        }
     }
 
     /* 新生必读 */
     .newStudent{
+        height: 1.88rem;
+        /*background-color: pink;*/
+        padding: .25rem .15rem;
         h2{
-            color: #F74E15;
-            font-weight: 700;
-            padding-left: .1rem;
-            font-size: 14px;
+            font-size: 18px;
+            color: #EF4D1B;
+            line-height: .18rem;
+            font-weight: 600;
+            margin-bottom: .2rem;
         }
         .box1{
-            width: 5000px;
+            width: 2600px;
+            height: 1.2rem !important;
             .box1-item{
                 display: flex;
                 flex-direction: row;
-                width: 2.6rem;
-                /*height: 150px;*/
-                height: 1.1rem;
+                width: 2.5rem;
+                height: 1.05rem;
                 text-align: left;
-                margin: .1rem;
-                padding: .1rem;
-                background-color: #fff;
-                box-shadow: .03rem .02rem .03rem #CCC;
+                padding: .15rem;
+                background: #FFFFFF;
+                box-shadow: 0 .02rem .08rem 0 #E5E5E5;
+                border-radius: .02rem;
                 .img{
-                    width: 2.9rem;
+                    width: .75rem;
+                    height: .75rem;
+                    margin-right: .1rem;
                     img{
-                        width: 100%;
-                        margin: 0 auto;
+                        width: .75rem;
+                        height: .75rem;
                     }
                 }
                 .inf{
                     /*width: 70px;*/
+                    width: 1.34rem;
                     display: flex;
                     flex-direction: column;
-                    line-height: 20px;
-                    padding: 0 .1rem;
+                    line-height: .2rem;
+                    /*padding: 0 .1rem;*/
                     .title{
                         font-weight: 700;
-                        color: #383838;
                         font-size: 14px;
+                        color: #333333;
+                        line-height: .18rem;
+                        /*height:.36rem;*/
                         overflow: hidden;
+                        padding: 0 ;
                         text-overflow: ellipsis;
                         display: -webkit-box;
                         -webkit-line-clamp: 2;
@@ -233,38 +346,277 @@
                         overflow:hidden;//超出的隐藏
                         text-overflow:ellipsis;//省略号
                         white-space:nowrap;//强制一行显示
-                        line-height: 28px;
-
+                        font-size: 12px;
+                        color: #888888;
+                        line-height: .12rem;
+                        height: .12rem;
+                        margin-bottom: .05rem;
                     }
                     .price{
-                        color: #d24d24;
-                        /*font-weight: 600;*/
-                        font-size: 16px;
+                        font-size: 14px;
+                        color: #EF4D1B;
+                        line-height: .14rem;
                     }
                 }
             }
         }
+        .vux-tab-item{
+            font-size: 18px;
+            color: #888888;
+            line-height: 18px;
+            font-weight: 600;
+        }
+    }
 
+    /* 课程 */
+    .class{
+        height: 1.94rem;
+        /*padding: 0 0.15rem;*/
+        /*background-color: pink;*/
+        .box1{
+            width: 2600px;
+            height: 1.2rem !important;
+            margin: .2rem 0 0 .15rem;
+            .box1-item{
+                display: flex;
+                flex-direction: row;
+                width: 2.5rem;
+                height: 1.05rem;
+                text-align: left;
+                padding: .15rem;
+                background: #FFFFFF;
+                box-shadow: 0 .02rem .08rem 0 #E5E5E5;
+                border-radius: .02rem;
+                .img{
+                    width: .75rem;
+                    height: .75rem;
+                    margin-right: .1rem;
+                    img{
+                        width: .75rem;
+                        height: .75rem;
+                    }
+                }
+                .inf{
+                    /*width: 70px;*/
+                    width: 1.34rem;
+                    display: flex;
+                    flex-direction: column;
+                    line-height: .2rem;
+                    /*padding: 0 .1rem;*/
+                    .title{
+                        font-weight: 700;
+                        font-size: 14px;
+                        color: #333333;
+                        line-height: .18rem;
+                        /*height:.36rem;*/
+                        overflow: hidden;
+                        padding: 0 ;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        overflow:hidden;
+                        /*! autoprefixer: off */
+                        -webkit-box-orient: vertical;
+
+                    }
+                    .desc{
+                        overflow:hidden;//超出的隐藏
+                        text-overflow:ellipsis;//省略号
+                        white-space:nowrap;//强制一行显示
+                        font-size: 12px;
+                        color: #888888;
+                        line-height: .12rem;
+                        height: .12rem;
+                        margin-bottom: .05rem;
+                    }
+                    .price{
+                        font-size: 14px;
+                        color: #EF4D1B;
+                        line-height: .14rem;
+                    }
+                }
+            }
+        }
+        .vux-tab-item{
+            font-size: 18px;
+            color: #888888;
+            line-height: 18px;
+            font-weight: 600;
+        }
     }
 
     /* 现场课 */
-    .course {
-        .grid-center {
-            .name {
-                text-align: left;
+    .site-class-container{
+        width: 1000px;
+        .title{
+            height: .45rem;
+            line-height: .45rem;
+            padding: 0 .15rem;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #DEDEDE;
+            h2{
+                font-size: 18px;
+                color: #333333;
+                line-height: 18px;
                 font-weight: 600;
-                color: #2A2A2A;
             }
-            .info {
+            span{
+                font-size: 14px;
+                color: #888888;
+                line-height: 14px;
+            }
+        }
+        .box1{
+            width: 850px;
+            height: 3.7rem !important;
+            margin: .15rem 0 0 .15rem;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            .box1-item{
                 display: flex;
-                justify-content: space-between;
+                flex-direction: column;
+                width: 2rem;
+                height: 1.75rem;
+                line-height: .14rem;
+                text-align: left;
+                /*padding: .15rem;*/
+                background: #FFFFFF;
+                box-shadow: 0 .02rem .08rem 0 #E5E5E5;
+                border-radius: .02rem;
+                margin: 0;
+                margin-bottom: .1rem;
+                margin-right: .1rem;
+                .img{
+                    width: 2rem;
+                    height: 1.2rem;
+                    img{
+                        width: 2rem;
+                        height: 1.2rem;
+                    }
+                }
+                .site-inf{
+                    padding: .1rem .15rem 0;
+                    .site-title{
+                        font-size: 14px;
+                        color: #333333;
+                        line-height: .16rem;
+                        font-weight: 600;
+                        display: inline-block;
+                        width: 1.67rem;
+                        overflow: hidden;
+                        text-overflow:ellipsis;
+                        white-space: nowrap;
+                    }
+                    .inf{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        margin-top: .05rem;
+                        .price{
+                            font-size: 14px;
+                            color: #EF4D1B;
+                            line-height: .14rem;
+                        }
+                        .time{
+                            font-size: 12px;
+                            color: #888888;
+                            line-height: .12rem;
+                        }
+                    }
+                }
 
-                .price {
-                    color: #DD7D5F;
+            }
+        }
+    }
+
+    /* 导师团队 */
+    .mentor-container{
+        height: 1.98rem;
+        /*background-color: pink;*/
+        margin-top: .2rem;
+        .title{
+            height: .45rem;
+            line-height: .45rem;
+            padding: 0 .15rem;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #DEDEDE;
+            h2{
+                font-size: 18px;
+                color: #333333;
+                line-height: 18px;
+                font-weight: 600;
+            }
+            span{
+                font-size: 14px;
+                color: #888888;
+                line-height: 14px;
+            }
+        }
+        .box1{
+            margin: .2rem 0 0 .15rem;
+            height: 1.2rem !important;
+            .box1-item{
+                width: 1.5rem;
+                height: 1.12rem;
+                background: #FFFFFF;
+                box-shadow: 0 .02rem .08rem 0 #E5E5E5;
+                border-radius: .02rem;
+                .mentor-photo{
+                    height: .6rem;
+                    border-bottom: 1px solid #DEDEDE;
+                    display: flex;
+                    flex-direction: row;
+                    /*justify-content: center;*/
+                    align-items: center;
+                    padding-left: .15rem;
+                    a{
+
+                        img{
+                            display: inline-block;
+                            width: .3rem;
+                            height: .3rem;
+                            border-radius: 50%;
+                            vertical-align: middle;
+                        }
+                    }
+                    .mentor-name{
+                        font-size: 14px;
+                        color: #333333;
+                        line-height: 14px;
+                        padding-left: .15rem;
+                        font-weight: 600;
+                    }
+                }
+                .mentor-inf{
+                    font-size: 12px;
+                    color: #888888;
+                    line-height: 16px;
+                    padding: 0 .05rem;
+                    margin-top: .05rem;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
                 }
             }
         }
     }
+
+    /* 周边产品 */
+    .cartoon-container{
+        .title{
+            background-color: #fff;
+            border-bottom: none;
+        }
+    }
+
+
+
+
 
     /* 公共标题 */
     .title{
@@ -273,14 +625,20 @@
         font-weight: normal;
         justify-content: space-between;
         align-items: center;
-        height: .4rem;
+        height: .45rem;
+        line-height: .45rem;
+        /*border-bottom: 1px solid #DEDEDE;*/
 
         h2{
-            font-weight: normal;
-            font-size: 14px;
+            font-size: 18px;
+            color: #333333;
+            line-height: .18rem;
+            font-weight: 600;
         }
         span{
-            font-size: 12px;
+            font-size: 14px;
+            color: #888888;
+            line-height: .14rem;
         }
     }
 
@@ -310,6 +668,18 @@
             }
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     .box {

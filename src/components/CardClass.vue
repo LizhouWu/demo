@@ -1,17 +1,17 @@
 <template>
     <div class="cardClass-container">
         <!--<card>-->
-            <!--<p slot="content" class="card-padding" v-text="msg">标题</p>-->
+            <!--<p slot="content" class="card-padding" msg="msg">{{ msg }}</p>-->
             <!--<span>更多</span>-->
         <!--</card>-->
         <grid :cols="2" :show-lr-borders="false" class="course">
-            <grid-item v-for="i in 4" :key="i">
+            <grid-item v-for="i in 6" :key="i">
                 <div class="grid-center">
                     <img src="../assets/images/1.png" alt="" >
                     <div class="name">奇迹30 成都场</div>
                     <div class="info">
                         <span class="price">￥360.00</span>
-                        <span class="time">2018-02-03</span>
+                        <!--<span class="time">2018-02-03</span>-->
                     </div>
                 </div>
             </grid-item>
@@ -29,12 +29,12 @@
         },
         data() {
             return {
-                flag:true
+                flag:true,
+                msg: "你好"
             }
         },
         props:[
             "title",
-            "msg",
         ]
     }
 </script>
@@ -47,8 +47,12 @@
             /*}*/
         /*}*/
     /*}*/
+    .weui-grid{
+        height: 1.85rem;
+    }
     .cardClass-container img{
-        width: 1.6rem;
+        width: 1.58rem;
+        height: 1.1rem;
     }
     .card-demo-flex {
         display: flex;

@@ -3,7 +3,7 @@
         <router-view></router-view>
 
         <!-- 底部 vTabbar -->
-        <vTabbar></vTabbar>
+        <vTabbar v-if="$store.state.showTabbar"></vTabbar>
     </div>
 </template>
 
@@ -14,20 +14,26 @@
         components: {
             vTabbar,
         },
+        created(){
+            this.$store.state.showTabbar = true
+            console.log(this.$store.state.showTabbar)
+        },
     }
 </script>
 
 <style lang="less">
     @import '~vux/src/styles/reset.less';
     body{
-        background-color: #fbf9fe;
+        background-color: #f5f5f5;
         font-size: 12px;
+        /*font-family: PingFangSC-Medium;*/
+        font-family: PingFangSC-Medium;
     }
     #app{
-        margin-bottom: 70px;
-        background-color: #f5f5f5;
+        margin-bottom: 90px;
         min-height: 100%;
-        font-size: 12px;
-        font-family: 'Helvetica', Helvetica, Arial, sans-serif;
+    }
+    i{
+        font-style: normal;
     }
 </style>
