@@ -33,8 +33,7 @@
                             <img src="../assets/images/img.png" alt="">
                         </a>
                         <div class="inf">
-                            <span class="title">灵商密码 成都场灵商
-密码 成都场</span>
+                            <span class="title">灵商密码 成都场灵商密码 成都场</span>
                             <span class="desc">最值得学习的商业课程</span>
                             <span class="price">￥360.00</span>
                         </div>
@@ -64,30 +63,7 @@
             </scroller>
         </div>
 
-<<<<<<< HEAD
-=======
-        <!-- 课程 -->
-        <div class="class">
-            <vTab></vTab>
-            <scroller lock-y :scrollbar-x=false>
-                <div class="box1">
-                    <div class="box1-item" v-for="i in 7">
-                        <!--<span>{{' ' + i + ' '}}</span>-->
-                        <a href="" class="img">
-                            <img src="../assets/images/img.png" alt="">
-                        </a>
-                        <div class="inf">
-                            <span class="title">灵商密码 成都场灵商
-密码 成都场</span>
-                            <span class="desc">最值得学习的商业课程</span>
-                            <span class="price">￥360.00</span>
-                        </div>
-                    </div>
-                </div>
-            </scroller>
-        </div>
 
->>>>>>> 3bea29e56f3d9a16e105fa74b3f45a5eaa2505fa
 
         <!-- 现场课 -->
         <div class="site-class-container">
@@ -96,13 +72,8 @@
                 <span>更多</span>
             </div>
             <scroller lock-y :scrollbar-x=false>
-<<<<<<< HEAD
                 <div class="box1" id="siteWidth">
                     <div class="box1-item" v-for="i in 7" ref="siteItem">
-=======
-                <div class="box1">
-                    <div class="box1-item" v-for="i in 7">
->>>>>>> 3bea29e56f3d9a16e105fa74b3f45a5eaa2505fa
                         <!--<span>{{' ' + i + ' '}}</span>-->
                         <a href="" class="img">
                             <img src="../assets/images/1.png" alt="">
@@ -296,11 +267,7 @@
         display: flex;
         flex-direction: row;
         padding: 0 .15rem;
-<<<<<<< HEAD
         height: .5rem;
-=======
-        height: 50px;
->>>>>>> 3bea29e56f3d9a16e105fa74b3f45a5eaa2505fa
         justify-content: center;
         align-items: center;
         background-color: #fff;
@@ -509,10 +476,7 @@
 
     /* 现场课 */
     .site-class-container{
-<<<<<<< HEAD
-=======
         width: 1000px;
->>>>>>> 3bea29e56f3d9a16e105fa74b3f45a5eaa2505fa
         .title{
             height: .45rem;
             line-height: .45rem;
@@ -534,19 +498,12 @@
         }
         .box1{
             width: 850px;
-<<<<<<< HEAD
             height: 3.8rem !important;
-=======
-            height: 3.7rem !important;
->>>>>>> 3bea29e56f3d9a16e105fa74b3f45a5eaa2505fa
             margin: .15rem 0 0 .15rem;
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
-<<<<<<< HEAD
             padding-right: .15rem;
-=======
->>>>>>> 3bea29e56f3d9a16e105fa74b3f45a5eaa2505fa
             .box1-item{
                 display: flex;
                 flex-direction: column;
@@ -559,13 +516,7 @@
                 box-shadow: 0 .02rem .08rem 0 #E5E5E5;
                 border-radius: .02rem;
                 margin: 0;
-<<<<<<< HEAD
                 margin-bottom: .15rem;
-                /*margin-right: .1rem;*/
-=======
-                margin-bottom: .1rem;
-                margin-right: .1rem;
->>>>>>> 3bea29e56f3d9a16e105fa74b3f45a5eaa2505fa
                 .img{
                     width: 2rem;
                     height: 1.2rem;
@@ -604,8 +555,6 @@
                         }
                     }
                 }
-<<<<<<< HEAD
-
             }
         }
     }
@@ -652,57 +601,6 @@
                     align-items: center;
                     padding-left: .15rem;
                     a{
-
-=======
-
-            }
-        }
-    }
-
-    /* 导师团队 */
-    .mentor-container{
-        height: 1.98rem;
-        /*background-color: pink;*/
-        margin-top: .2rem;
-        .title{
-            height: .45rem;
-            line-height: .45rem;
-            padding: 0 .15rem;
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid #DEDEDE;
-            h2{
-                font-size: 18px;
-                color: #333333;
-                line-height: 18px;
-                font-weight: 600;
-            }
-            span{
-                font-size: 14px;
-                color: #888888;
-                line-height: 14px;
-            }
-        }
-        .box1{
-            margin: .2rem 0 0 .15rem;
-            height: 1.2rem !important;
-            .box1-item{
-                width: 1.5rem;
-                height: 1.12rem;
-                background: #FFFFFF;
-                box-shadow: 0 .02rem .08rem 0 #E5E5E5;
-                border-radius: .02rem;
-                .mentor-photo{
-                    height: .6rem;
-                    border-bottom: 1px solid #DEDEDE;
-                    display: flex;
-                    flex-direction: row;
-                    /*justify-content: center;*/
-                    align-items: center;
-                    padding-left: .15rem;
-                    a{
-
->>>>>>> 3bea29e56f3d9a16e105fa74b3f45a5eaa2505fa
                         img{
                             display: inline-block;
                             width: .3rem;
